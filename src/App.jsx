@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { Button } from './Button';
+import Person from './Person';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -83,6 +84,8 @@ function App() {
       <Button text="Reset" color="orange" handleClick={resetAll} />
 
       <p>Il colore dello sfondo è cambiato {colorChangeCount} volte</p>
+      {/* Person Component */}
+      <Person />
     </div>
   );
 }

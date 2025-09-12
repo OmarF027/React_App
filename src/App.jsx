@@ -2,12 +2,17 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { Button } from './Button';
 
 function App() {
   const [count, setCount] = useState(0);
 
   // Lista di animali
   const animals = ["Lion", "Cow", "Snake", "Lizard"];
+
+  // Funzioni per i bottoni
+  const goToGoogle = () => window.location.href = "https://google.com";
+  const sayHello = () => alert("Ciao!");
 
   return (
     <>
@@ -38,12 +43,16 @@ function App() {
       {/* Lista animali */}
       <h2>Animals:</h2>
       <ul>
-      {animals.map((animal) =>
-        animal.startsWith("L") ? <li key={animal}>{animal}</li> : null
-      )}
-    </ul>
+        {animals.map((animal) =>
+          animal.startsWith("L") ? <li key={animal}>{animal}</li> : null
+        )}
+      </ul>
 
-
+      {/* Bottoni con props */}
+      <h2>Custom Buttons:</h2>
+      <Button text="Google" color="red" fontSize={16} handleClick={goToGoogle} />
+      <Button text="Ciao" color="green" fontSize={18} handleClick={sayHello} />
+      <Button /> {/* usa i default props */}
     </>
   );
 }
